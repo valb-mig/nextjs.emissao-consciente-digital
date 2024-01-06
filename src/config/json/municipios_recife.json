@@ -1,0 +1,86 @@
+[
+    {
+        "indice": 1,
+        "lat": -8.05428,
+        "lng": -34.8813,
+        "nome": "Recife"
+    },
+    {
+        "indice": 2,
+        "lat": -8.00937,
+        "lng": -34.8553,
+        "nome": "Olinda"
+    },
+    {
+        "indice": 3,
+        "lat": -8.0349,
+        "lng": -34.9506,
+        "nome": "Jaboatão dos Guararapes"
+    },
+    {
+        "indice": 4,
+        "lat": -8.2806,
+        "lng": -35.9758,
+        "nome": "Igarassu"
+    },
+    {
+        "indice": 5,
+        "lat": -8.6095,
+        "lng": -35.9477,
+        "nome": "Abreu e Lima"
+    },
+    {
+        "indice": 6,
+        "lat": -8.0275,
+        "lng": -34.9770,
+        "nome": "Camaragibe"
+    },
+    {
+        "indice": 7,
+        "lat": -8.2822,
+        "lng": -35.0364,
+        "nome": "Cabo de Santo Agostinho"
+    },
+    {
+        "indice": 8,
+        "lat": -8.0069,
+        "lng": -35.0094,
+        "nome": "São Lourenço da Mata"
+    },
+    {
+        "indice": 9,
+        "lat": -7.7416,
+        "lng": -35.2165,
+        "nome": "Araçoiaba"
+    },
+    {
+        "indice": 10,
+        "lat": -7.7471,
+        "lng": -34.8290,
+        "nome": "Ilha de Itamaracá"
+    },
+    {
+        "indice": 11,
+        "lat": -8.3983,
+        "lng": -35.0638,
+        "nome": "Ipojuca"
+    },
+    {
+        "indice": 12,
+        "lat": -8.1254,
+        "lng": -35.0831,
+        "nome": "Moreno"
+    },
+    {
+        "indice": 13,
+        "lat": -7.7671,
+        "lng": -34.8344,
+        "nome": "Itapissuma"
+    },
+    {
+        "indice": 14,
+        "lat": -8.0522,
+        "lng": -34.9186,
+        "nome": "Paulista"
+    }
+]
