@@ -1,6 +1,9 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
+import 'leaflet/dist/leaflet.css';
 import '../styles/MapRoot.scss';
 
 const MapRoot = ({ pontoA, pontoB }) => {
@@ -8,6 +11,20 @@ const MapRoot = ({ pontoA, pontoB }) => {
   useEffect(() => {
     import('leaflet/dist/leaflet.css');
   }, []);
+
+  const getIcon = (ponto) => {
+
+    const meuIcone = L.icon({
+      iconUrl: `/img/marker_${ponto}.png`, // Substitua pelo URL real da sua imagem online
+      iconSize: [40, 40], // Especifique o tamanho do ícone
+      iconAnchor: [15, 30], // Ponto onde o ícone estará ancorado ao marcador
+      popupAnchor: [0, -30], // Ponto onde a janela popup estará ancorada ao marcador
+    });
+
+    return meuIcone;
+  }
+
+
 
   return (
     <MapContainer
@@ -19,10 +36,10 @@ const MapRoot = ({ pontoA, pontoB }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={[pontoA.lat, pontoA.lng]}>
+      <Marker position={[pontoA.lat, pontoA.lng]} icon={getIcon('a')}>
         <Popup>{pontoA.nome}</Popup>
       </Marker>
-      <Marker position={[pontoB.lat, pontoB.lng]}>
+      <Marker position={[pontoB.lat, pontoB.lng]} icon={getIcon('b')}>
         <Popup>{pontoB.nome}</Popup>
       </Marker>
     </MapContainer>

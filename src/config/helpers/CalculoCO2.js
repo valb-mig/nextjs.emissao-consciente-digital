@@ -1,7 +1,8 @@
 import React from 'react';
 import haversine from 'haversine-distance';
 
-const CalculoCO2 = ({ pontoA, pontoB }) => {
+const CalculoCO2 = ({ pontoA, pontoB, veiculo }) => {
+
   const calcularDistancia = () => {
     return haversine(pontoA, pontoB) / 1000; // Convertendo de metros para quilômetros
   };
@@ -15,7 +16,7 @@ const CalculoCO2 = ({ pontoA, pontoB }) => {
 
   return (
     <p>
-      A emissão de CO2 para a distância entre os pontos {pontoA.nome} e {pontoB.nome} é de aproximadamente {calcularEmissaoCO2()} kg.
+      A emissão de CO2 para a distância entre os pontos {pontoA.nome} e {pontoB.nome} é de aproximadamente {calcularEmissaoCO2()} kg, em um(a) {veiculo}.
     </p>
   );
 };

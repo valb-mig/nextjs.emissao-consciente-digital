@@ -1,1 +1,16 @@
+.header-start {
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
 
+    .header-title {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .header-desc {
+        font-size: .7em;
+    }
+}

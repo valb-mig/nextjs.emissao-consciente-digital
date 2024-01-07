@@ -20,6 +20,8 @@ import Card   from '@/app/components/Card';
 import CalculoDistancia from '@/config/helpers/CalculoDistancia';
 import CalculoCO2 from '@/config/helpers/CalculoCO2';
 
+import './styles/app.scss';
+
 const Home = () => {
 
   const consumoMedio = 5; // km por litro
@@ -30,34 +32,54 @@ const Home = () => {
     B:{ lat: -8.00937, lng: -34.8553, nome: 'Olinda, PE' }
   });
 
-  const handleSelectChange = (event) => {
-    const selectedIndex = event.target.value;
-    const selected = municipiosJson.find((municipio) => municipio.indice === parseInt(selectedIndex));
+  const [veiculo, setVeiculo] = useState('o');
 
-    console.log(selected);
+  const handleSelectChange = (event, ponto) => {
+    const selectedIndex = event.target.value;
+
+    if(selectedIndex !== '')
+    {
+      const selected = municipiosJson.find((municipio) => municipio.indice === parseInt(selectedIndex));
+
+      setRota({
+        ...rota, 
+          [ponto]:{
+            lat:  selected.lat,
+            lng:  selected.lng,
+            nome: selected.nome
+          }
+        });
+  
+      console.log(selected);
+    }
   };
 
   return (
     <>
       <Header.Root>
         <Header.Start
-          Title='Emissão Consciente Digital: “Minimizando Pegadas de Carbono no Transporte Público"'
+          Title='Emissão Consciente Digital'
+          Desc='“Minimizando Pegadas de Carbono no Transporte Público"'
         />
       </Header.Root>
 
-      <main className='row'>
+      <main>
 
-        <section className='main-box'>
+        <section className='main-box bg-light m-5 p-2'>
           <div className='map-container'>
 
             <Form.Root OnSubmit={() => {}} Class="d-flex gap-2 p-2 map-form">
               <Select.Root
                 Placeholder="Ponto A"
                 Options={municipiosJson}
+                OnChange={(e) => handleSelectChange(e, 'A')}
+                Value={1}
               />
               <Select.Root
                 Placeholder="Ponto B"
                 Options={municipiosJson}
+                OnChange={(e) => handleSelectChange(e, 'B')}
+                Value={2}
               />
               <Select.Root
                 Placeholder="Veiculo"
@@ -76,11 +98,8 @@ const Home = () => {
                     nome:'Ônibus'
                   } 
                 ]}
-              />
-              <Button.Root
-                Type="submit"
-                Class="btn-primary"
-                Title="Calcular"
+                OnChange={(e) => setVeiculo(e.target.value)}
+                Value={veiculo}
               />
             </Form.Root>
 
@@ -90,7 +109,7 @@ const Home = () => {
             />
           </div>
 
-          <div className='info'>
+          <div className='card-box'>
             <Card.Root>
             </Card.Root>
 
@@ -100,19 +119,23 @@ const Home = () => {
             <Card.Root>
             </Card.Root>
           </div>
+
         </section>
       
-        <CalculoDistancia 
-          pontoA={rota.A} 
-          pontoB={rota.B}
-        />
-        
-        <CalculoCO2 
-          pontoA={rota.A} 
-          pontoB={rota.B} 
-          consumoMedio={consumoMedio} 
-          emissaoCO2PorLitro={emissaoCO2PorLitro} 
-        />
+        <section className='info-box bg-light m-5 px-2'>
+          <CalculoDistancia 
+            pontoA={rota.A} 
+            pontoB={rota.B}
+          />
+          
+          <CalculoCO2 
+            pontoA={rota.A} 
+            pontoB={rota.B} 
+            consumoMedio={consumoMedio} 
+            emissaoCO2PorLitro={emissaoCO2PorLitro} 
+            veiculo={veiculo}
+          />
+        </section>
 
       </main>
 

@@ -2,9 +2,13 @@ import React from 'react';
 
 import '../styles/SelectRoot.scss';
 
-const SelectRoot = ({ Placeholder, Options }) => {
+const SelectRoot = ({ Placeholder, Options, OnChange, Value }) => {
     return(
-        <select className='form-control'>
+        <select 
+            className='form-control' 
+            onChange={(e) => OnChange(e)}
+            value={Value}
+        >
 
             <option value="">
                 {Placeholder}
