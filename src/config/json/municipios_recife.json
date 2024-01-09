@@ -13,74 +13,68 @@
     },
     {
         "indice": 3,
-        "lat": -8.0349,
-        "lng": -34.9506,
+        "lat": -8.11208,
+        "lng": -35.0154,
         "nome": "Jaboatão dos Guararapes, PE"
     },
     {
         "indice": 4,
-        "lat": -8.2806,
-        "lng": -35.9758,
+        "lat": -7.83437,
+        "lng": -34.9064,
         "nome": "Igarassu, PE"
     },
     {
         "indice": 5,
-        "lat": -8.6095,
-        "lng": -35.9477,
+        "lat": -7.91014,
+        "lng": -34.9033,
         "nome": "Abreu e Lima, PE"
     },
     {
         "indice": 6,
-        "lat": -8.0275,
-        "lng": -34.9770,
+        "lat": -8.02044,
+        "lng": -34.9817,
         "nome": "Camaragibe, PE"
     },
     {
         "indice": 7,
-        "lat": -8.2822,
-        "lng": -35.0364,
+        "lat": -8.28744,
+        "lng": -35.0353,
         "nome": "Cabo de Santo Agostinho, PE"
     },
     {
         "indice": 8,
-        "lat": -8.0069,
-        "lng": -35.0094,
+        "lat": -8.00352,
+        "lng": -35.0214,
         "nome": "São Lourenço da Mata, PE"
     },
     {
         "indice": 9,
-        "lat": -7.7416,
-        "lng": -35.2165,
+        "lat": -7.78852,
+        "lng": -35.0918,
         "nome": "Araçoiaba, PE"
     },
     {
-        "indice": 10,
-        "lat": -7.7471,
-        "lng": -34.8290,
-        "nome": "Ilha de Itamaracá, PE"
-    },
-    {
         "indice": 11,
-        "lat": -8.3983,
-        "lng": -35.0638,
+        "lat": -8.40012,
+        "lng": -35.0643,
         "nome": "Ipojuca, PE"
     },
     {
         "indice": 12,
-        "lat": -8.1254,
-        "lng": -35.0831,
+        "lat": -8.11777,
+        "lng": -35.0931,
         "nome": "Moreno, PE"
     },
     {
         "indice": 13,
-        "lat": -7.7671,
-        "lng": -34.8344,
+        "lat": -7.77693,
+        "lng": -34.8924,
         "nome": "Itapissuma, PE"
     },
     {
         "indice": 14,
-        "lat": -8.0522,
-        "lng": -34.9186,
+        "lat": -7.94009,
+        "lng": -34.8723,
         "nome": "Paulista, PE"
     }
 ]
