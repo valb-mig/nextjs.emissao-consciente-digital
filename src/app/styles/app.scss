@@ -1,6 +1,12 @@
 @import '/src/app/styles/variables.scss';
 
+main {
+    width: 100%;
+    padding: 0 5vw;
+}
+
 .main-box {
+    display: flex;
     border-radius: $radius;
 }
 

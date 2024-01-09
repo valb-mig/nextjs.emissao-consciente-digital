@@ -5,6 +5,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import useCalculos from './hooks/useCalculos';
 import Icon from '@/config/assets/icons';
 import municipiosJson from '@/config/json/municipios_recife.json'
 
@@ -13,19 +14,11 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Form   from '@/app/components/Form';
 import Select from '@/app/components/Select';
-import Input  from '@/app/components/Input';
-import Button from '@/app/components/Button';
 import Card   from '@/app/components/Card';
-
-import CalculoDistancia from '@/config/helpers/CalculoDistancia';
-import CalculoCO2 from '@/config/helpers/CalculoCO2';
 
 import './styles/app.scss';
 
 const Home = () => {
-
-  const consumoMedio = 5; // km por litro
-  const emissaoCO2PorLitro = 2.68; // kg por litro
 
   const [rota, setRota] = useState({
     A:{ lat: -8.05428, lng: -34.8813, nome: 'Recife, PE' },
@@ -33,6 +26,8 @@ const Home = () => {
   });
 
   const [veiculo, setVeiculo] = useState('o');
+
+  const { CalculoCO2, CalculoDistancia } = useCalculos();
 
   const handleSelectChange = (event, ponto) => {
     const selectedIndex = event.target.value;
@@ -44,13 +39,12 @@ const Home = () => {
       setRota({
         ...rota, 
           [ponto]:{
-            lat:  selected.lat,
-            lng:  selected.lng,
-            nome: selected.nome
+            indice: selected.indice,
+            lat:    selected.lat,
+            lng:    selected.lng,
+            nome:   selected.nome
           }
         });
-  
-      console.log(selected);
     }
   };
 
@@ -64,22 +58,22 @@ const Home = () => {
       </Header.Root>
 
       <main>
+        <section className='main-box bg-light m-5 p-2 d-flex'>
 
-        <section className='main-box bg-light m-5 p-2'>
-          <div className='map-container'>
+          <div className='map-container w-100'>
 
             <Form.Root OnSubmit={() => {}} Class="d-flex gap-2 p-2 map-form">
               <Select.Root
                 Placeholder="Ponto A"
                 Options={municipiosJson}
                 OnChange={(e) => handleSelectChange(e, 'A')}
-                Value={1}
+                Value={rota.A.indice}
               />
               <Select.Root
                 Placeholder="Ponto B"
                 Options={municipiosJson}
                 OnChange={(e) => handleSelectChange(e, 'B')}
-                Value={2}
+                Value={rota.B.indice}
               />
               <Select.Root
                 Placeholder="Veiculo"
@@ -109,34 +103,26 @@ const Home = () => {
             />
           </div>
 
-          <div className='card-box'>
+          <div className='d-flex flex-column gap-2 p-2'>
             <Card.Root>
+              <Card.Body
+                Icon={<Icon.Road/>}
+                Text={CalculoDistancia(rota.A, rota.B)+' km'}
+              />
             </Card.Root>
 
             <Card.Root>
-            </Card.Root>
-
-            <Card.Root>
+              <Card.Body
+                Icon={<Icon.Co2/>}
+                Text={CalculoCO2(rota.A, rota.B, veiculo)+' kg'}
+              />
             </Card.Root>
           </div>
 
         </section>
       
         <section className='info-box bg-light m-5 px-2'>
-          <CalculoDistancia 
-            pontoA={rota.A} 
-            pontoB={rota.B}
-          />
-          
-          <CalculoCO2 
-            pontoA={rota.A} 
-            pontoB={rota.B} 
-            consumoMedio={consumoMedio} 
-            emissaoCO2PorLitro={emissaoCO2PorLitro} 
-            veiculo={veiculo}
-          />
         </section>
-
       </main>
 
       <Footer.Root>
