@@ -4,7 +4,7 @@ import '../styles/CardRoot.scss';
 
 const CardRoot = ({ children }) => {
     return(
-        <div className='card-box'>
+        <div className='card-box bg-info'>
             {children}
         </div>
     );

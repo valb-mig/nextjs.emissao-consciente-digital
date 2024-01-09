@@ -1,0 +1,12 @@
+@import '/src/app/styles/variables.scss';
+
+.card-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width:   200px;
+    height:  200px;
+    
+    border-radius: $radius;
+}

@@ -1,0 +1,11 @@
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    i {
+        font-size: 3.9em;
+    }
+}

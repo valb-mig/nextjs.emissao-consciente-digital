@@ -24,13 +24,11 @@ const MapRoot = ({ pontoA, pontoB }) => {
     return meuIcone;
   }
 
-
-
   return (
     <MapContainer
       center={[pontoA.lat, pontoA.lng]}
       zoom={7}
-      style={{ height: '400px', width: '100%' }}
+      style={{ height: '90%', width: '100%' }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
