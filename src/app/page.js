@@ -1,11 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic'
 import useCalculos from './hooks/useCalculos';
 import Icon from '@/config/assets/icons';
 import municipiosJson from '@/config/json/municipios_recife.json'
 
-import Map    from '@/app/components/Map';
+const Map = dynamic(() => import('@/app/components/Map'), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+})
+
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Form   from '@/app/components/Form';
@@ -119,7 +124,7 @@ const Home = () => {
               />
             </Form.Root>
 
-            <Map.Root 
+            <Map
               pontoA={rota.A} 
               pontoB={rota.B} 
             />

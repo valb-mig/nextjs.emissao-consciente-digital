@@ -1,3 +1,5 @@
+'use client';
+
 import haversine from 'haversine-distance';
 
 const useCalculos = () => {
