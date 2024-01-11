@@ -1,12 +1,13 @@
 @import '/src/app/styles/variables.scss';
 
-.card-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.box-body {
 
-    width:   10rem;
-    height:  10rem;
-    
+    display: flex;
+    align-items: center;
     border-radius: $radius;
+    transition: all .2s;
+
+    i {
+        font-size: 3.0em;
+    }
 }

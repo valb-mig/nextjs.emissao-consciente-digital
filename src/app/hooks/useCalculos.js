@@ -16,15 +16,15 @@ const useCalculos = () => {
         switch(veiculo) {
 
             case 'c':
-                emissaoCO2PorKm = 0.096;
+                emissaoCO2PorKm = 0.380;
                 break;
 
             case 'm':
-                emissaoCO2PorKm = 0.035;
+                emissaoCO2PorKm = 0.210;
                 break;
 
             case 'o':
-                emissaoCO2PorKm = 0.096;
+                emissaoCO2PorKm = 0.060;
                 break;
         }
 

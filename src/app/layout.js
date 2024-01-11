@@ -4,7 +4,7 @@ import '@/app/styles/globals.scss'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Emissão Consciente Digital',
+  title: '🌎 Emissão Consciente Digital',
   description: 'Webpage para calcular o custo de Co² Recife e Brasil',
 }
 
